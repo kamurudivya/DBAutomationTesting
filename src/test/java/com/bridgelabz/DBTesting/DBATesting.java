@@ -8,7 +8,6 @@ public class DBATesting {
 
 
     public void create() throws SQLException {
-        System.out.println("----------Insert data---------");
         ps = connection.prepareStatement(DataBase.insertQuery);
         ps.setInt(1, 7);
         ps.setString(2, "Attitude");
@@ -18,7 +17,6 @@ public class DBATesting {
         System.out.println("Data inserted successfully...");
     }
     public void read() throws SQLException {
-        System.out.println("----------Fetch data from database---------");
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(DataBase.fetchQuery);
         while (rs.next()) {
@@ -31,7 +29,6 @@ public class DBATesting {
     }
 
     public void update() throws SQLException {
-        System.out.println("----------Update data---------");
         ps = connection.prepareStatement(DataBase.updateQuery);
         ps.setString(1, "7");
         ps.setString(2, "Attitude");
@@ -42,7 +39,6 @@ public class DBATesting {
     }
 
     public void delete() throws SQLException {
-        System.out.println("----------Delete data---------");
         ps = connection.prepareStatement(DataBase.deleteQuery);
         ps.setInt(1, 106);
         ps.executeUpdate();
